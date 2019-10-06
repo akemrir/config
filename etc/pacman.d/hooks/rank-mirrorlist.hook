@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = File
+Target = etc/pacman.d/mirrorlist
+
+[Action]
+Description = Ranking pacman mirrors...
+When = PostTransaction
+Depends = sh
+Depends = coreutils
+Depends = pacman-extra
+Exec = /etc/pacman.d/hooks/rank-mirrorlist.sh /etc/pacman.d/mirrorlist
