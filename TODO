@@ -1,0 +1,17 @@
+x:
+  - xinitrc
+  - xserverrc
+  - xsession
+
+pkg:
+  - makepkg.conf
+
+filesystem:
+  - make example encrypted setup (with encrypted swap with hibernation support)
+  - configure crypttab and fstab
+
+Makefile:
+  - $(MAKE) DESTDIR=... copyetc <- how to do it better?
+
+predictable network interfaces:
+  - ln -sf /dev/null /etc/systemd/network/99-default.link
